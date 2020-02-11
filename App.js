@@ -37,7 +37,9 @@ class App extends React.Component {
   
   dataSubmit=(e)=>{
     e.preventDefault();
-    //console.log(this.state.name,this.state.age,this.state.croppedImageUrl,this.state.selectedOption)
+    if(this.state.name==="" || this.state.age==="" || this.state.croppedImageUrl==="" || this.state.selectedOption===""){
+      alert("please fill the feild.")
+    }else{
     let {imageArray} = this.state;
     let obj={
       id:this.state.imageArray.length + 1,
@@ -65,6 +67,7 @@ class App extends React.Component {
       selectedOption:"",
       imageArray
     })
+  }
   }
   
   addFile = (file, text) => {
